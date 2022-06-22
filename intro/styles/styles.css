@@ -41,3 +41,63 @@ div > img:hover {
     transform: rotate(360deg);
   }
 }
+
+body {
+  height: 100vh;
+  position: relative;
+}
+
+.planet {
+  width: var(--diameter);
+  height: var(--diameter);
+  top: calc(50% - var(--diameter) / 2);
+  left: calc(50% - var(--diameter) / 2);
+  border-radius: 50%;
+  position: absolute;
+}
+
+.sun {
+  width: 100px;
+  height: 100px;
+  background: orange;
+  border-radius: 50%;
+  top: calc(50% - 100px / 2);
+  left: calc(50% - 100px / 2);
+  position: absolute;
+}
+.mercury {
+  --moveX: 100px;
+  --diameter: 30px;
+  background: grey;
+  animation: solarsystem 2s infinite linear;
+}
+
+.venus {
+  --moveX: 150px;
+  --diameter: 60px;
+  background: blue;
+  animation: solarsystem 3s infinite linear;
+}
+
+.earth {
+  --moveX: 250px;
+  --diameter: 80px;
+  background: aquamarine;
+  animation: solarsystem 3s infinite linear;
+}
+
+.mars {
+  --moveX: 290px;
+  --diameter: 70px;
+  background: red;
+  animation: solarsystem 3.5s infinite linear;
+}
+
+@keyframes solarsystem {
+  from {
+    transform: rotate(0deg) translate(var(--moveX));
+  }
+  to {
+    transform: rotate(360deg) translate(var(--moveX));
+  }
+}
